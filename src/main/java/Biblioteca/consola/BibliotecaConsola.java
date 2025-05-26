@@ -1,14 +1,20 @@
-package Biblioteca.vista;
+package Biblioteca.consola;
 
 import Biblioteca.controlador.LibroControlador;
 import Biblioteca.controlador.LectorControlador;
 
 import java.util.Scanner;
 
-public class BibliotecaVista {
+public class BibliotecaConsola {
     private Scanner scanner = new Scanner(System.in);
-    private LibroControlador libroControlador = new LibroControlador();
-    private LectorControlador lectorControlador = new LectorControlador();
+    private LibroControlador libroControlador;
+    private LectorControlador lectorControlador;
+
+    // Constructor que recibe los controladores desde el main
+    public BibliotecaConsola(LibroControlador libroControlador, LectorControlador lectorControlador) {
+        this.libroControlador = libroControlador;
+        this.lectorControlador = lectorControlador;
+    }
 
     public void mostrarMenuPrincipal() {
         int opcion;
